@@ -1,0 +1,97 @@
+{
+  "name": "taiji-spring-cloud-platform-ui",
+  "version": "1.0.5",
+  "description": "基础",
+  "author": "胡杰<hujie@mail.taiji.com.cn>",
+  "license": "MIT",
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "theme": "et --config src/theme/element-variables.scss --out src/theme/element",
+    "lint": "vue-cli-service lint",
+    "svgo": "svgo -f src/icons/svg --config=src/icons/svgo.yml"
+  },
+  "lint-staged": {
+    "src/**/*.{js,vue}": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "keywords": [
+    "vue",
+    "element-ui",
+    "admin"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+http://1.202.219.48:9099/taiji-spring-cloud-platform/taiji-spring-cloud-platform-ui.git"
+  },
+  "bugs": {
+    "url": "http://1.202.219.48:9099/taiji-spring-cloud-platform/taiji-spring-cloud-platform-ui/issues"
+  },
+  "dependencies": {
+    "animate.css": "^3.7.2",
+    "axios": "0.18.0",
+    "clipboard": "1.7.1",
+    "cron-parser": "^2.13.0",
+    "element-ui": "2.9.1",
+    "echarts": "^4.2.1",
+    "es6-uuid": "^1.0.1",
+    "js-cookie": "2.2.0",
+    "lodash": "^4.17.14",
+    "mockjs": "1.0.1-beta3",
+    "normalize.css": "7.0.0",
+    "nprogress": "0.2.0",
+    "path-to-regexp": "^2.4.0",
+    "qs": "^6.6.0",
+    "screenfull": "3.3.3",
+    "svg-sprite-loader": "^4.1.3",
+    "svgo": "1.0.5",
+    "v-tooltip": "^2.0.2",
+    "vue": "^2.5.22",
+    "vue-count-to": "1.0.13",
+    "vue-router": "3.0.1",
+    "vue-split-pane": "^0.0.8",
+    "vue-splitpane": "1.0.2",
+    "vuex": "3.0.1"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.4.0",
+    "@vue/cli-plugin-eslint": "^3.4.0",
+    "@vue/cli-service": "^3.4.0",
+    "babel-eslint": "^10.0.1",
+    "element-theme": "2.0.1",
+    "element-theme-chalk": "2.9.2",
+    "eslint": "^5.8.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "node-sass": "^4.11.0",
+    "sass-loader": "^7.1.0",
+    "vue-template-compiler": "^2.5.21"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "rules": {
+      "no-console": "off",
+      "vue/no-use-v-if-with-v-for": "off"
+    },
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "engines": {
+    "node": ">= 6.0.0",
+    "npm": ">= 3.0.0"
+  }
+}

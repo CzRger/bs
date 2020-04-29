@@ -1,0 +1,84 @@
+/*element ui*/
+$element-color-primary: #1a73cc;
+$element-color-white: #FFFFFF;
+$element-color-black: #000000;
+$element-color-success: #67C23A;
+$element-color-warning: #E6A23C;
+$element-color-danger: #F56C6C;
+$element-color-info: #909399;
+$element-color-text-primary: #303133;
+$element-color-text-regular: #606266;
+$element-color-text-secondary: #909399;
+$element-color-text-placeholder: #C0C4CC;
+$element-border-color-base: #DCDFE6;
+$element-border-color-light: #E4E7ED;
+$element-border-color-lighter: #EBEEF5;
+$element-border-color-extra-light: #F2F6FC;
+$element-background-color-base: #F5F7FA;
+$element-box-shadow-base-1: rgba(0, 0, 0, .12);
+$element-box-shadow-base-2: rgba(0, 0, 0, .04);
+$element-box-shadow-dark-1: rgba(0, 0, 0, .12);
+$element-box-shadow-dark-2: rgba(0, 0, 0, .12);
+$element-box-shadow-light: rgba(0, 0, 0, 0.1);
+$element-font-color-disabled-base: #bbb;
+$element-icon-color: #666;
+$element-checkbox-disabled-input-fill: #edf2fc;
+$element-select-multiple-input-color: #666;
+$element-select-dropdown-empty-color: #999;
+$element-message-background-color: #edf2fc;
+$element-cascader-tag-background: #f0f2f5;
+$element-tab-border-line: #e4e4e4;
+$element-dialog-box-shadow: rgba(0, 0, 0, 0.3);
+$element-table-fixed-box-shadow: rgba(0, 0, 0, .12);
+$element-datepicker-inner-border-color: #e4e4e4;
+$element-datepicker-cell-hover-color: #fff;
+$element-carousel-arrow-background: rgba(31, 45, 61, 0.11);
+$element-carousel-arrow-hover-background: rgba(31, 45, 61, 0.23);
+$element-calendar-selected-background-color: #F2F8FE;
+
+/*custom color*/
+/* 业务视图最外层色值 */
+$app-main-background-color: #f6f6f6;
+/* 系统logo高度 */
+$app-logo-height: 37px;
+/* 系统logo宽度 */
+$app-logo-width: 216px;
+/* 一级菜单外层高度 */
+$menu-first-wrapper-height: 70px;
+/* 一级菜单背景颜色 */
+$menu-first-wrapper-background-color: #1e87f0;
+/* 一级菜单背景颜色, 当前选中状态 */
+$menu-first-item-active-background-color: $element-color-primary;
+/* 一级菜单字体颜色 */
+$menu-first-item-text-color: #FFFFFF;
+/* 一级菜单字体颜色  当前选中状态 */
+$menu-first-item-text-active-color: #FFFFFF;
+/* 侧边栏宽度 */
+$sidebar-container-width: 220px;
+/* 侧边栏宽度 折叠状态 */
+$hide-sidebar-container-width: 36px !important;
+/* 侧边栏菜单字体颜色 */
+$sidebar-menu-text-color: #FFFFFF;
+/* 侧边栏菜单字体颜色 */
+$sidebar-menu-text-active-color: #1e87f0;
+/* 侧边栏菜单背景颜色 当前选中状态 */
+$sidebar-menu-background-color: #1d2b36;
+/* 侧边栏菜单背景颜色 菜单项选中状态 */
+$sidebar-menu-item-active-background-color: #0f1922;
+
+/* 打开菜单历史记录-高度 */
+$menu-history-tags-height: 34px;
+/* 菜单面包屑-高度 */
+$menu-breadcrumb-height: 50px;
+/* 菜单面包屑-切换按钮两边间距 */
+$menu-breadcrumb-space: 10px;
+
+@mixin menu-simple {
+  color: $sidebar-menu-text-color;
+  background-color: $sidebar-menu-background-color !important;
+}
+
+@mixin menu-active {
+  color: $sidebar-menu-text-active-color;
+  background-color: $sidebar-menu-item-active-background-color !important;
+}

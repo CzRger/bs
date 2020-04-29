@@ -1,0 +1,100 @@
+$div-height: 969px;
+$max-height-1080: 969px;
+$max-height-param: 0px;
+$max-height-param-multiple: 1;
+@mixin media-screen($div-height) {
+  .#{$class-name} {
+    height: $div-height !important;
+    width: 100%;
+  }
+}
+//1800
+@media screen and (max-height: ($max-height-param * $max-height-param-multiple + $max-height-1080 - (-720 * $max-height-param-multiple))) {
+  $div-height: ($max-height-param * $max-height-param-multiple + $max-height-1080 - (-720 * $max-height-param-multiple)) - $offset-height;
+  @include media-screen($div-height);
+}
+//1680
+@media screen and (max-height: ($max-height-param * $max-height-param-multiple + $max-height-1080 - (-600 * $max-height-param-multiple))) {
+  $div-height: ($max-height-param * $max-height-param-multiple + $max-height-1080 - (-600 * $max-height-param-multiple)) - $offset-height;
+  @include media-screen($div-height);
+}
+//1600
+@media screen and (max-height: ($max-height-param * $max-height-param-multiple + $max-height-1080 - (-520 * $max-height-param-multiple))) {
+  $div-height: ($max-height-param * $max-height-param-multiple + $max-height-1080 - (-520 * $max-height-param-multiple)) - $offset-height;
+  @include media-screen($div-height);
+}
+//1440
+@media screen and (max-height: ($max-height-param * $max-height-param-multiple + $max-height-1080 - (-360 * $max-height-param-multiple))) {
+  $div-height: ($max-height-param * $max-height-param-multiple + $max-height-1080 - (-360 * $max-height-param-multiple)) - $offset-height;
+  @include media-screen($div-height);
+}
+//1200
+@media screen and (max-height: ($max-height-param * $max-height-param-multiple + $max-height-1080 - (-120 * $max-height-param-multiple))) {
+  $div-height: ($max-height-param * $max-height-param-multiple + $max-height-1080 - (-120 * $max-height-param-multiple)) - $offset-height;
+  @include media-screen($div-height);
+}
+//1152
+@media screen and (max-height: ($max-height-param * $max-height-param-multiple + $max-height-1080 - (72 * $max-height-param-multiple))) {
+  $div-height: ($max-height-param * $max-height-param-multiple + $max-height-1080 - (72 * $max-height-param-multiple)) - $offset-height;
+  @include media-screen($div-height);
+}
+//1080
+@media screen and (max-height: ($max-height-1080 + $max-height-param * $max-height-param-multiple)) {
+  $div-height: ($max-height-1080 + $max-height-param * $max-height-param-multiple) - $offset-height;
+  @include media-screen($div-height);
+}
+//1050
+@media screen and (($max-height-param * $max-height-param-multiple + $max-height-1080 - (30 * $max-height-param-multiple))) {
+  $div-height: ($max-height-param * $max-height-param-multiple + $max-height-1080 - (30 * $max-height-param-multiple)) - $offset-height;
+  @include media-screen($div-height);
+}
+//1024
+@media screen and (max-height: ($max-height-param * $max-height-param-multiple + $max-height-1080 - (56 * $max-height-param-multiple))) {
+  $div-height: ($max-height-param * $max-height-param-multiple + $max-height-1080 - (56 * $max-height-param-multiple)) - $offset-height;
+  @include media-screen($div-height);
+}
+//960
+@media screen and (max-height: ($max-height-param * $max-height-param-multiple + $max-height-1080 - (120 * $max-height-param-multiple))) {
+  $div-height: ($max-height-param * $max-height-param-multiple + $max-height-1080 - (120 * $max-height-param-multiple)) - $offset-height;
+  @include media-screen($div-height);
+}
+//900
+@media screen and (max-height: ($max-height-param * $max-height-param-multiple + $max-height-1080 - (180 * $max-height-param-multiple))) {
+  $div-height: ($max-height-param * $max-height-param-multiple + $max-height-1080 - (180 * $max-height-param-multiple)) - $offset-height;
+  @include media-screen($div-height);
+}
+//864
+@media screen and (max-height: ($max-height-param * $max-height-param-multiple + $max-height-1080 - (216 * $max-height-param-multiple))) {
+  $div-height: ($max-height-param * $max-height-param-multiple + $max-height-1080 - (216 * $max-height-param-multiple)) - $offset-height;
+  @include media-screen($div-height);
+}
+//854
+@media screen and (max-height: ($max-height-param * $max-height-param-multiple + $max-height-1080 - (226 * $max-height-param-multiple))) {
+  $div-height: ($max-height-param * $max-height-param-multiple + $max-height-1080 - (226 * $max-height-param-multiple)) - $offset-height;
+  @include media-screen($div-height);
+}
+//800
+@media screen and (max-height: ($max-height-param * $max-height-param-multiple + $max-height-1080 - (280 * $max-height-param-multiple))) {
+  $div-height: ($max-height-param * $max-height-param-multiple + $max-height-1080 - (280 * $max-height-param-multiple)) - $offset-height;
+  @include media-screen($div-height);
+}
+//768
+@media screen and (max-height: ($max-height-param * $max-height-param-multiple + $max-height-1080 - (312 * $max-height-param-multiple))) {
+  $div-height: ($max-height-param * $max-height-param-multiple + $max-height-1080 - (312 * $max-height-param-multiple)) - $offset-height;
+  @include media-screen($div-height);
+}
+//720
+@media screen and (max-height: ($max-height-param * $max-height-param-multiple + $max-height-1080 - (360 * $max-height-param-multiple))) {
+  $div-height: ($max-height-param * $max-height-param-multiple + $max-height-1080 - (360 * $max-height-param-multiple)) - $offset-height;
+  @include media-screen($div-height);
+}
+//600
+@media screen and (max-height: ($max-height-param * $max-height-param-multiple + $max-height-1080 - (480 * $max-height-param-multiple))) {
+  $div-height: ($max-height-param * $max-height-param-multiple + $max-height-1080 - (480 * $max-height-param-multiple)) - $offset-height;
+  @include media-screen($div-height);
+}
+//500
+@media screen and (max-height: ($max-height-param * $max-height-param-multiple + $max-height-1080 - (580 * $max-height-param-multiple))) {
+  $div-height: ($max-height-param * $max-height-param-multiple + $max-height-1080 - (580 * $max-height-param-multiple)) - $offset-height;
+  @include media-screen($div-height);
+}
