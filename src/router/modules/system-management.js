@@ -18,19 +18,19 @@ const asyncRouter = {
     icon: 'setting'
   },
   children: [
-    {
-      path: 'dept',
-      component: () => import('@/views/system-management/dept/main'),
-      hidden: false,
-      alwaysShow: true,
-      name: '323c76618c6b56109bd490baf0d00902',
-      meta: {
-        sortNum: 1,
-        roles: [],
-        title: '部门管理',
-        icon: 'dept'
-      }
-    },
+    // {
+    //   path: 'dept',
+    //   component: () => import('@/views/system-management/dept/main'),
+    //   hidden: false,
+    //   alwaysShow: true,
+    //   name: '323c76618c6b56109bd490baf0d00902',
+    //   meta: {
+    //     sortNum: 1,
+    //     roles: [],
+    //     title: '部门管理',
+    //     icon: 'dept'
+    //   }
+    // },
     {
       path: 'user-group',
       component: MenuGroup,
@@ -160,132 +160,132 @@ const asyncRouter = {
         },
       ]
     },
-    {
-      path: 'system-dictionary',
-      component: MenuGroup,
-      hidden: false,
-      alwaysShow: true,
-      name: '3e8b43c5014d40d89c501af50ce4e0b7',
-      meta: {
-        sortNum: 1,
-        roles: [],
-        title: '系统字典',
-        icon: 'dictionary-setting'
-      },
-      children: [
-        {
-          path: 'dictionary-type',
-          component: () => import('@/views/system-management/dictionary-type/main'),
-          hidden: false,
-          alwaysShow: true,
-          name: '0303b070aa904ede8ac7efd9fb05dd85',
-          params: {
-            systemOnly: 'YES'
-          },
-          meta: {
-            sortNum: 1,
-            roles: [],
-            title: '系统字典分类',
-            icon: 'dictionary-type'
-          }
-        },
-        {
-          path: 'dictionary-single',
-          component: () => import('@/views/system-management/dictionary/singleMain'),
-          hidden: false,
-          alwaysShow: true,
-          name: '5e15ba726bf0440db88aed9791f06ded',
-          params: {
-            systemOnly: 'YES'
-          },
-          meta: {
-            sortNum: 2,
-            roles: [],
-            title: '单级系统字典',
-            icon: 'dictionary-single'
-          }
-        },
-        {
-          path: 'dictionary-multi',
-          component: () => import('@/views/system-management/dictionary/multiMain'),
-          hidden: false,
-          alwaysShow: true,
-          name: '8fe346225637449d845fbd4b8ef1d21e',
-          params: {
-            systemOnly: 'YES'
-          },
-          meta: {
-            sortNum: 3,
-            roles: [],
-            title: '多级系统字典',
-            icon: 'dictionary-multi'
-          }
-        }
-      ]
-    },
-    {
-      path: 'business-dictionary',
-      component: MenuGroup,
-      hidden: false,
-      alwaysShow: true,
-      name: 'da4c2695c36a50eab041735842b530e7',
-      meta: {
-        sortNum: 1,
-        roles: [],
-        title: '业务字典',
-        icon: 'dictionary-setting'
-      },
-      children: [
-        {
-          path: 'dictionary-type',
-          component: () => import('@/views/system-management/dictionary-type/main'),
-          hidden: false,
-          alwaysShow: true,
-          name: 'd9fab44477ba5d2caf1aab1b95281713',
-          params: {
-            systemOnly: 'NO'
-          },
-          meta: {
-            sortNum: 1,
-            roles: [],
-            title: '业务字典分类',
-            icon: 'dictionary-type'
-          }
-        },
-        {
-          path: 'dictionary-single',
-          component: () => import('@/views/system-management/dictionary/singleMain'),
-          hidden: false,
-          alwaysShow: true,
-          name: '22fc466264e65171a7631b2079a2b7f6',
-          params: {
-            systemOnly: 'NO'
-          },
-          meta: {
-            sortNum: 2,
-            roles: [],
-            title: '单级业务字典',
-            icon: 'dictionary-single'
-          }
-        },
-        {
-          path: 'dictionary-multi',
-          component: () => import('@/views/system-management/dictionary/multiMain'),
-          hidden: false,
-          alwaysShow: true,
-          name: 'd9369152df124e1aae855f743d3eedc8',
-          params: {
-            systemOnly: 'NO'
-          },
-          meta: {
-            sortNum: 3,
-            roles: [],
-            title: '多级业务字典',
-            icon: 'dictionary-multi'
-          }
-        }
-      ]
-    }
+    // {
+    //   path: 'system-dictionary',
+    //   component: MenuGroup,
+    //   hidden: false,
+    //   alwaysShow: true,
+    //   name: '3e8b43c5014d40d89c501af50ce4e0b7',
+    //   meta: {
+    //     sortNum: 1,
+    //     roles: [],
+    //     title: '系统字典',
+    //     icon: 'dictionary-setting'
+    //   },
+    //   children: [
+    //     {
+    //       path: 'dictionary-type',
+    //       component: () => import('@/views/system-management/dictionary-type/main'),
+    //       hidden: false,
+    //       alwaysShow: true,
+    //       name: '0303b070aa904ede8ac7efd9fb05dd85',
+    //       params: {
+    //         systemOnly: 'YES'
+    //       },
+    //       meta: {
+    //         sortNum: 1,
+    //         roles: [],
+    //         title: '系统字典分类',
+    //         icon: 'dictionary-type'
+    //       }
+    //     },
+    //     {
+    //       path: 'dictionary-single',
+    //       component: () => import('@/views/system-management/dictionary/singleMain'),
+    //       hidden: false,
+    //       alwaysShow: true,
+    //       name: '5e15ba726bf0440db88aed9791f06ded',
+    //       params: {
+    //         systemOnly: 'YES'
+    //       },
+    //       meta: {
+    //         sortNum: 2,
+    //         roles: [],
+    //         title: '单级系统字典',
+    //         icon: 'dictionary-single'
+    //       }
+    //     },
+    //     {
+    //       path: 'dictionary-multi',
+    //       component: () => import('@/views/system-management/dictionary/multiMain'),
+    //       hidden: false,
+    //       alwaysShow: true,
+    //       name: '8fe346225637449d845fbd4b8ef1d21e',
+    //       params: {
+    //         systemOnly: 'YES'
+    //       },
+    //       meta: {
+    //         sortNum: 3,
+    //         roles: [],
+    //         title: '多级系统字典',
+    //         icon: 'dictionary-multi'
+    //       }
+    //     }
+    //   ]
+    // },
+    // {
+    //   path: 'business-dictionary',
+    //   component: MenuGroup,
+    //   hidden: false,
+    //   alwaysShow: true,
+    //   name: 'da4c2695c36a50eab041735842b530e7',
+    //   meta: {
+    //     sortNum: 1,
+    //     roles: [],
+    //     title: '业务字典',
+    //     icon: 'dictionary-setting'
+    //   },
+    //   children: [
+    //     {
+    //       path: 'dictionary-type',
+    //       component: () => import('@/views/system-management/dictionary-type/main'),
+    //       hidden: false,
+    //       alwaysShow: true,
+    //       name: 'd9fab44477ba5d2caf1aab1b95281713',
+    //       params: {
+    //         systemOnly: 'NO'
+    //       },
+    //       meta: {
+    //         sortNum: 1,
+    //         roles: [],
+    //         title: '业务字典分类',
+    //         icon: 'dictionary-type'
+    //       }
+    //     },
+    //     {
+    //       path: 'dictionary-single',
+    //       component: () => import('@/views/system-management/dictionary/singleMain'),
+    //       hidden: false,
+    //       alwaysShow: true,
+    //       name: '22fc466264e65171a7631b2079a2b7f6',
+    //       params: {
+    //         systemOnly: 'NO'
+    //       },
+    //       meta: {
+    //         sortNum: 2,
+    //         roles: [],
+    //         title: '单级业务字典',
+    //         icon: 'dictionary-single'
+    //       }
+    //     },
+    //     {
+    //       path: 'dictionary-multi',
+    //       component: () => import('@/views/system-management/dictionary/multiMain'),
+    //       hidden: false,
+    //       alwaysShow: true,
+    //       name: 'd9369152df124e1aae855f743d3eedc8',
+    //       params: {
+    //         systemOnly: 'NO'
+    //       },
+    //       meta: {
+    //         sortNum: 3,
+    //         roles: [],
+    //         title: '多级业务字典',
+    //         icon: 'dictionary-multi'
+    //       }
+    //     }
+    //   ]
+    // }
   ]
 }
 

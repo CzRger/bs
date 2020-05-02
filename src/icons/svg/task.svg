@@ -1,5 +1,5 @@
 <svg class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
-     width="300" height="300">
+     width="300" height="300" fill="#ffffff">
   <path d="M409.6 307.2l307.2 0 0 51.2-307.2 0 0-51.2Z" ></path>
   <path d="M409.6 512l153.6 0 0 51.2-153.6 0 0-51.2Z" ></path>
   <path d="M409.6 716.8l51.2 0 0 51.2-51.2 0 0-51.2Z" ></path>

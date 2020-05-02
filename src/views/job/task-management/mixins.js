@@ -43,10 +43,8 @@ export default {
           required: true, message: '请选择运行模式', trigger: 'change'
         }],
         executorHandler: [{
-          required: true, message: ' ', trigger: 'blur'
-        }, {
-          pattern: '/S', message: '请输入', trigger: 'blur'
-        }],
+          required: false, message: '请输入jobHandler', trigger: 'blur'
+        }], // {pattern: '/S', message: '', trigger: 'blur'}
         executorBlockStrategy: [{
           required: true, message: '请选择阻塞处理策略', trigger: 'change'
         }],

@@ -1,7 +1,7 @@
 <template>
   <div class="app-wrapper">
     <menu-first class="menu-first-wrapper">
-      <img src="@/assets/images/logo-full.png"/>
+      <img src="@/assets/images/logo.png"/>
     </menu-first>
     <div class="container-wrapper">
       <div class="main-container">

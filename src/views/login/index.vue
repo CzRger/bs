@@ -1,7 +1,7 @@
 <template>
   <div class="login-container">
     <div class="logo">
-      <img src="../../assets/images/login/logo.png">
+      <img src="../../assets/images/login/login_logo.png">
     </div>
     <div class="form-container">
       <el-form ref="loginForm" :model="loginForm" :rules="loginRules" class="login-form" auto-complete="on" label-position="left">
@@ -211,7 +211,7 @@
     position: fixed;
     height: 100%;
     width: 100%;
-    background: url('../../assets/images/login/background.png') no-repeat top center;
+    background: url('../../assets/images/login/back1.jpg') no-repeat top center;
     position: relative;
 
     .logo {
@@ -220,7 +220,7 @@
       padding-top: 7%;
     }
     .form-container {
-
+      border-radius: 40px;
       width: 445px;
       height: 328px;
       margin: 70px auto;

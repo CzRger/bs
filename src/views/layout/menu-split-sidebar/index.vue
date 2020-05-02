@@ -1,7 +1,7 @@
 <template>
   <div class="app-wrapper">
     <top-menu-first class="menu-first-wrapper">
-      <img src="@/assets/images/logo-full.png"/>
+      <img src="@/assets/images/logo.png"/>
     </top-menu-first>
     <div :class="dynamicContainerWrapper" class="container-wrapper">
       <sidebar :menu-split="true" class="sidebar-container"/>
