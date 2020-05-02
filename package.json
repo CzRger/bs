@@ -31,7 +31,7 @@
   },
   "dependencies": {
     "animate.css": "^3.7.2",
-    "axios": "0.18.0",
+    "axios": "0.19.2",
     "clipboard": "1.7.1",
     "cron-parser": "^2.13.0",
     "element-ui": "2.9.1",
