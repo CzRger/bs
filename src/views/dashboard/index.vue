@@ -28,7 +28,7 @@
               <p class="p_two">{{top_data.task}}</p>
             </div>
             <div class="in_bottom">
-              <p class="p_three">调度平台运行的任务数量</p>
+              <p class="p_three">调度平台存在的任务数量</p>
             </div>
           </div>
         </div>
@@ -58,11 +58,11 @@
         <div class="des">
           <div class="success">
             <p>调度成功次数：</p>
-            <p class="data">33</p>
+            <p class="data">{{barData[0].value}}</p>
           </div>
           <div class="error">
             <p>调度失败次数：</p>
-            <p class="data">22</p>
+            <p class="data">{{barData[1].value}}</p>
           </div>
         </div>
       </div>
@@ -73,11 +73,11 @@
         <div class="des">
           <div class="success">
             <p>调度成功次数：</p>
-            <p class="data">33</p>
+            <p class="data">{{pieData[0].value}}</p>
           </div>
           <div class="error">
             <p>调度失败次数：</p>
-            <p class="data">22</p>
+            <p class="data">{{pieData[1].value}}</p>
           </div>
         </div>
       </div>
@@ -110,11 +110,11 @@
           ]
         ],
         pieData: [
-          {value: 3, name: '成功', itemStyle: {color: '#27c800'}},
+          {value: 0, name: '成功', itemStyle: {color: '#27c800'}},
           {value: 0, name: '失败', itemStyle: {color: '#d33e00'}},
         ],
         barData: [
-          {value: 3, name: '成功', itemStyle: {color: '#27c800'}},
+          {value: 0, name: '成功', itemStyle: {color: '#27c800'}},
           {value: 0, name: '失败', itemStyle: {color: '#d33e00'}},
         ],
         top_data: {
@@ -128,6 +128,7 @@
       this.initTaskLog()
       this.initYDayTaskLog()
       this.initActuator()
+      this.initTask()
     },
     methods: {
       initTaskLog() {
@@ -139,6 +140,7 @@
               ? this.pieData[0].value = this.pieData[0].value + 1
               : this.pieData[1].value = this.pieData[1].value + 1
           })
+          this.top_data.log = data.total
         })
       },
       initYDayTaskLog() {
@@ -170,14 +172,26 @@
       },
       initTask() {
         this.top_data.task = 0
-        JobInfoAPI.pageList({"pageSize":10,"page":1,"sorts":[],"entity":{"jobGroup":1,"triggerStatus":0,"jobDesc":null,"executorHandler":null,"author":null}})
+        JobInfoAPI.pageList({"pageSize":10,"page":1,"sorts":[],"entity":{"jobGroup": null,"triggerStatus":0,"jobDesc":null,"executorHandler":null,"author":null}})
         .then(data => {
           this.top_data.task = this.top_data.task + data.total
         })
-        JobInfoAPI.pageList({"pageSize":10,"page":1,"sorts":[],"entity":{"jobGroup":1,"triggerStatus":0,"jobDesc":null,"executorHandler":null,"author":null}})
-        .then(data => {
-          this.top_data.task = this.top_data.task + data.total
-        })
+      },
+      initLog() {
+        const params = {"pageSize":99999,"page":1,"sorts":[],"entity":{"jobGroup":null,"jobId":null,"logStatus":null,"filterTime":null}}
+        const today = new Date()
+        today.setTime(today.getTime()-24*60*60*1000)
+        const startTime = today.getFullYear() + "-" + (today.getMonth() + 1) + "-" + today.getDate() + ' 00:00:00'
+        const endTime = today.getFullYear() + "-" + (today.getMonth() + 1) + "-" + today.getDate() + ' 23:59:59'
+        params.entity.filterTime = startTime + ' - ' + endTime
+        JobLogAPI.pageList(params)
+          .then(data => {
+            data.list.forEach(v => {
+              v.triggerCode == 200
+                ? this.barData[0].value = this.barData[0].value + 1
+                : this.barData[1].value = this.barData[1].value + 1
+            })
+          })
       }
     }
   }
