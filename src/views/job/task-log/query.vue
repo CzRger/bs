@@ -88,11 +88,11 @@
             <template v-else>无</template>
           </template>
         </el-table-column>
-        <el-table-column :show-overflow-tooltip="true" label="操作" align="center">
-          <template slot-scope="{ row }">
-            <el-button @click="Detail(row)" type="text" size="small">执行日志</el-button>
-          </template>
-        </el-table-column>
+<!--        <el-table-column :show-overflow-tooltip="true" label="操作" align="center">-->
+<!--          <template slot-scope="{ row }">-->
+<!--            <el-button @click="Detail(row)" type="text" size="small">执行日志</el-button>-->
+<!--          </template>-->
+<!--        </el-table-column>-->
       </el-table>
       <pagination position="right" :pagination="pagination" @page-size-changed="pageSizeChangeHandler" @page-changed="pageChangeHandler"/>
     </div>
