@@ -1,6 +1,6 @@
 <template>
   <div class="main">
-    <x-button-layout :button-width="188" :is-horizontal="true">
+    <x-button-layout :button-width="124" :is-horizontal="true">
       <el-form
         :model="queryCriteria"
         :inline="true">
@@ -53,7 +53,6 @@
       <template slot="button">
         <el-button round type="info" @click="resetHandler">重置</el-button>
         <el-button round type="primary" @click="queryHandler">查询</el-button>
-        <el-button round type="danger" @click="queryHandler">清理</el-button>
       </template>
     </x-button-layout>
     <div class="table">
