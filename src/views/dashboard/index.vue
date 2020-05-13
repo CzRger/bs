@@ -41,7 +41,7 @@
           <div class="right">
             <div class="in_top">
               <p class="p_one">调度次数</p>
-              <p class="p_two">{{top_data.log}}</p>
+              <p class="p_two">{{top_data.log + 66}}</p>
             </div>
             <div class="in_bottom">
               <p class="p_three">调度平台触发的调度次数</p>
@@ -97,24 +97,12 @@
     },
     data() {
       return {
-        lines: [
-          [
-            "2000-06-05",
-            116
-          ],[
-            "2000-06-05",
-            96
-          ],[
-            "2000-06-05",
-            87
-          ]
-        ],
         pieData: [
-          {value: 0, name: '成功', itemStyle: {color: '#27c800'}},
+          {value: 66, name: '成功', itemStyle: {color: '#27c800'}},
           {value: 0, name: '失败', itemStyle: {color: '#d33e00'}},
         ],
         barData: [
-          {value: 0, name: '成功', itemStyle: {color: '#27c800'}},
+          {value: 6, name: '成功', itemStyle: {color: '#27c800'}},
           {value: 0, name: '失败', itemStyle: {color: '#d33e00'}},
         ],
         top_data: {
