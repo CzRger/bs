@@ -6,7 +6,7 @@
         :inline="true">
         <div>
           <el-form-item label="执行器:" prop="jobGroup">
-            <el-select v-model="queryCriteria.jobGroup" clearable filterable placeholder="请选择" @clear="() => {queryCriteria.jobGroup = null}">
+            <el-select v-loading="loadingActuator" v-model="queryCriteria.jobGroup" clearable filterable placeholder="请选择" @clear="() => {queryCriteria.jobGroup = null}">
               <el-option v-for="(item, index) in actuator"
                          :key="index"
                          :label="item.title"
@@ -56,7 +56,7 @@
       </template>
     </x-button-layout>
     <div class="table">
-      <el-table :data="pagination.list" max-height="541" stripe border @sort-change="sortChangeHandler">
+      <el-table v-loading="loadingTable" :data="pagination.list" max-height="541" stripe border @sort-change="sortChangeHandler">
         <el-table-column type="index" label="序号" align="center"/>
         <el-table-column :show-overflow-tooltip="true" prop="jobId" label="任务ID" sortable="custom" align="center"/>
         <el-table-column :show-overflow-tooltip="true" prop="triggerTime" label="调度时间" align="center">
@@ -126,7 +126,10 @@
         queryCriteria: queryCriteria,
         startTime: this.formatDate() + ' 00:00:00',
         endTime: this.formatDate() + ' 23:59:59',
-        actuator: []
+        actuator: [],
+        loadingTable: true,
+        loadingActuator: true
+
       }
     },
     computed: {
@@ -137,7 +140,8 @@
     methods: {
       open(data) {
         this.$alert(data, '调度备注', {
-          dangerouslyUseHTMLString: true
+          dangerouslyUseHTMLString: true,
+          customClass: 'triggerMsg'
         });
       },
       initQueryCriteria(form = {}) {
@@ -160,17 +164,25 @@
         return arr[0] + '-' + arr[1] + '-' + arr[2]
       },
       executeQueryPage() {
+        this.loadingActuator = true
         JobGroupAPI.findAll().then(data => {
           this.actuator = []
           this.actuator = data
+          this.loadingActuator = false
+        }).catch(() => {
+          this.loadingActuator = false
         })
         const params = this.createQueryParams(false)
         params.entity.filterTime = this.startTime + ' - ' + this.endTime
         if (this.detail.jobId) {
           this.queryCriteria.jobId = this.detail.jobId
         }
+        this.loadingTable = true
         JobLogAPI.pageList(params).then(data => {
           this.queryResultHandler(data)
+          this.loadingTable = false
+        }).catch(() => {
+          this.loadingTable = false
         })
       },
       Detail(data) {

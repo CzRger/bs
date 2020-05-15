@@ -1,5 +1,5 @@
 <template>
-  <div class="main">
+  <div class="main" v-loading="loadingAll">
     <el-row>
       <el-col :span="24" style="margin: 10px 0px;">
         <x-button-layout :button-width="122" :is-horizontal="true">
@@ -8,7 +8,7 @@
             :inline="true">
             <div>
               <el-form-item label="执行器:" prop="jobGroup">
-                <el-select v-model="queryCriteria.jobGroup" filterable placeholder="请选择">
+                <el-select v-loading="loadingActuator" v-model="queryCriteria.jobGroup" filterable placeholder="请选择">
                   <el-option v-for="(item, index) in actuator"
                              :key="index"
                              :label="item.title"
@@ -59,7 +59,7 @@
       </el-col>
       <el-col :span="24">
         <div class="scrollbar">
-          <el-table :data="pagination.list" max-height="541" highlight-current-row stripe border @current-change="(row) => { selected = row }" @sort-change="sortChangeHandler">
+          <el-table v-loading="loadingTable" :data="pagination.list" max-height="541" highlight-current-row stripe border @current-change="(row) => { selected = row }" @sort-change="sortChangeHandler">
             <el-table-column type="index" label="序号" align="center"/>
             <el-table-column :show-overflow-tooltip="true" prop="id" label="任务ID" sortable="custom" align="center"/>
             <el-table-column :show-overflow-tooltip="true" prop="jobDesc" label="任务描述" sortable="custom" align="center"/>
@@ -95,7 +95,6 @@
   import {JobInfoAPI} from "@/api/task-management/index"
   import { mapGetters } from 'vuex'
   import {JobGroupAPI} from "@/api/task-management/index";
-  import {JobCodeAPI} from "@/api/task-management/index";
 
   export default {
     mixins: [BaseQueryPageForm, mixins],
@@ -105,7 +104,10 @@
       return {
         queryCriteria: queryCriteria,
         selected: null,
-        actuator: []
+        actuator: [],
+        loadingTable: true,
+        loadingActuator: true,
+        loadingAll: false
       }
     },
     computed: {
@@ -132,12 +134,20 @@
         })
       },
       executeQueryPage() {
+        this.loadingActuator = true
         JobGroupAPI.findAll().then(data => {
           this.actuator = []
           this.actuator = data
+          this.loadingActuator = false
+        }).catch(() => {
+          this.loadingActuator = false
         })
+        this.loadingTable = true
         JobInfoAPI.pageList(this.createQueryParams(false)).then(data => {
           this.queryResultHandler(data)
+          this.loadingTable = false
+        }).catch(() => {
+          this.loadingTable = false
         })
       },
       customDelHandler() {
@@ -172,10 +182,12 @@
         })
       },
       triggerLog(data) {
+        this.loadingTable = true
         this.$prompt('任务参数', '执行一次', {
           confirmButtonText: '确定',
           cancelButtonText: '取消',
         }).then(({ value }) => {
+          this.loadingTable = true
           JobInfoAPI.trigger({id: data.id, executorParam: value}).then(() => {
             this.$message({
               type: 'success',
@@ -191,6 +203,7 @@
         });
       },
       loadByJobGroup(data) {
+        this.loadingAll = true
         JobGroupAPI.loadById({id: data.jobGroup}).then(data => {
           let str = ''
           const style = 'display: inline-block;\n' +
@@ -214,6 +227,9 @@
           this.$alert(str, '注册节点', {
             dangerouslyUseHTMLString: true
           });
+          this.loadingAll = false
+        }).catch(() => {
+          this.loadingAll = false
         })
       },
       glueIde(data) {

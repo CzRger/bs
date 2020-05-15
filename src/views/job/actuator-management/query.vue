@@ -41,7 +41,7 @@
       </el-col>
       <el-col :span="24">
         <div class="scrollbar">
-          <el-table :data="pagination.list" max-height="541" highlight-current-row stripe border @current-change="(row) => { selected = row }" @sort-change="sortChangeHandler">
+          <el-table v-loading="loading" :data="pagination.list" max-height="541" highlight-current-row stripe border @current-change="(row) => { selected = row }" @sort-change="sortChangeHandler">
             <el-table-column type="index" label="序号" align="center"/>
             <el-table-column :show-overflow-tooltip="true" prop="order" label="排序" sortable="custom" align="center"/>
             <el-table-column :show-overflow-tooltip="true" prop="appName" label="AppName" sortable="custom" align="center"/>
@@ -83,6 +83,7 @@
       return {
         queryCriteria: queryCriteria,
         selected: null,
+        loading: true
       }
     },
     computed: {
@@ -102,10 +103,13 @@
         })
       },
       executeQueryPage() {
+        this.loading = true
         JobGroupAPI.pageList(this.createQueryParams(false)).then(data => {
           this.queryResultHandler(data)
+          this.loading = false
+        }).catch(() => {
+          this.loading = false
         })
-        JobGroupAPI.findAll()
       },
       customDelHandler() {
         //TODO 2019-10-15 正常

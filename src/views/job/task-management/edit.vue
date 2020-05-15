@@ -137,7 +137,7 @@
         this.actuator = data
       })
       deepMergeLeft(this.form, this.detail)
-      if (this.form.executorHandler === 'BEAN') {
+      if (this.form.glueType === 'BEAN') {
         this.rules.executorHandler[0].required = true
       } else {
         this.rules.executorHandler[0].required = false

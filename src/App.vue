@@ -16,4 +16,9 @@ export default{
   *::-webkit-scrollbar-thumb {background-color:#DEDFE1; border-radius:6px;} /*定义滑块 内阴影+圆角*/
   .scrollbarHide::-webkit-scrollbar{display: none}
   .scrollbarShow::-webkit-scrollbar{display: block}
+  .triggerMsg {
+    width: calc(80%);
+    height: calc(80%);
+    overflow: auto;
+  }
 </style>
